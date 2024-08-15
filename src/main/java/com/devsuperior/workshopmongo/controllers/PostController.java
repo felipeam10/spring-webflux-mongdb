@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.devsuperior.workshopmongo.controllers.util.URL;
 import com.devsuperior.workshopmongo.dto.PostDTO;
 import com.devsuperior.workshopmongo.services.PostService;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -30,14 +31,13 @@ public class PostController {
 		return service.findById(id)
 				.map(postDTO -> ResponseEntity.ok().body(postDTO));
 	}
-/*
+
 	@GetMapping(value = "/titlesearch")
-	public ResponseEntity<List<PostDTO>> findByTitle(@RequestParam(value = "text", defaultValue = "") String text) throws UnsupportedEncodingException {
+	public Flux<PostDTO> findByTitle(@RequestParam(value = "text", defaultValue = "") String text) throws UnsupportedEncodingException {
 		text = URL.decodeParam(text);
-		List<PostDTO> list = service.findByTitle(text);
-		return ResponseEntity.ok(list);
+		return service.findByTitle(text);
 	}
-	
+/*
 	@GetMapping(value = "/fullsearch")
 	public ResponseEntity<List<PostDTO>> fullSearch(
 			@RequestParam(value = "text", defaultValue = "") String text,
