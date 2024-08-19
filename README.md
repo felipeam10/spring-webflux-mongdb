@@ -1,5 +1,5 @@
 # ![DevSuperior logo](https://raw.githubusercontent.com/devsuperior/bds-assets/main/ds/devsuperior-logo-small.png) Spring MongoDB Reference Project
->  *This repository aims to provide the Reference project spring boot and mongodb to be used in DevSuperior courses*
+>  *This repository aims to provide the Reference project spring boot and mongodb to be used in DevSuperior courses and updated for me*
 
 ## Postman Collection and Environment:
 (download from the main folder "assets" of this repository, then import it into your Postman)
